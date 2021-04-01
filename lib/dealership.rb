@@ -16,11 +16,10 @@ class Dealership
 
   def add_car(car)
     @inventory << car
-    @inventory_count += 1
   end
 
   def has_inventory?
-    @inventory_count >= 1
+    inventory_count >= 1
   end
 
   def cars_by_make(make)
@@ -50,6 +49,7 @@ class Dealership
     @inventory.map do |cars|
       cars.total_cost
     end.sort
+    # require'pry';binding.pry
   end
 
   def cars_sorted_by_price
