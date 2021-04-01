@@ -8,8 +8,10 @@ class Dealership
     @name = name
     @address = address
     @inventory = []
-    @inventory_count = 0
-    @car_hash = {}
+  end
+
+  def inventory_count
+    @inventory.length
   end
 
   def add_car(car)
@@ -48,7 +50,6 @@ class Dealership
     @inventory.map do |cars|
       cars.total_cost
     end.sort
-    # require'pry';binding.pry
   end
 
   def cars_sorted_by_price
@@ -64,9 +65,8 @@ class Dealership
   end
 
   def inventory_hash
-    if @inventory.make == "Ford"
-      @car_hash["Ford"] << car
+    @inventory.group_by do |car|
+      car.make
     end
-    require'pry';binding.pry
   end
 end

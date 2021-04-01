@@ -15,7 +15,6 @@ RSpec.describe Car do
     expect(dealership.name).to eq("Acme Auto")
     expect(dealership.address).to eq("123 Main Street")
     expect(dealership.inventory).to eq([])
-    expect(dealership.inventory_count).to eq(0)
   end
 
   context 'methods' do
@@ -147,7 +146,7 @@ RSpec.describe Car do
 
       expect = {"Ford" => [car_1],
                 "Toyota" => [car_2, car_3],
-                "Chevrolet Bronco" => [car_4]
+                "Chevrolet" => [car_4]
                 }
 
       expect(dealership.inventory_hash).to eq(expect)
